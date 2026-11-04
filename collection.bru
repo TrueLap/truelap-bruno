@@ -1,0 +1,23 @@
+meta {
+  name: Nextstep Backend
+}
+
+auth {
+  mode: basic
+}
+
+auth:basic {
+  username: user
+  password: {{securityPassword}}
+}
+
+vars:pre-request {
+  baseUrl: http://localhost:8080
+  securityPassword: change-me
+  coachId: 1
+  athleteId: 1
+  workoutId: 1
+  itemId: 1
+  activityId: 1
+  groupId: 1
+}

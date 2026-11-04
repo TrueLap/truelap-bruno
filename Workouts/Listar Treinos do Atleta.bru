@@ -1,0 +1,23 @@
+meta {
+  name: Listar Treinos do Atleta
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/workouts?coachId={{coachId}}&athleteId={{athleteId}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  coachId: {{coachId}}
+  athleteId: {{athleteId}}
+  ~from: 
+  ~to: 
+}
+
+settings {
+  encodeUrl: true
+  forwardAuthorizationHeader: false
+}

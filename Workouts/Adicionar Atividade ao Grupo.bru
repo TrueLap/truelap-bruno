@@ -1,0 +1,37 @@
+meta {
+  name: Adicionar Atividade ao Grupo
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/workouts/{{workoutId}}/groups/{{groupId}}/activities?coachId={{coachId}}
+  body: json
+  auth: inherit
+}
+
+params:query {
+  coachId: {{coachId}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "Flexão de braço",
+    "targetUnit": "TIME",
+    "targetValue": 60,
+    "intensityMetric": "RPE",
+    "intensityMin": 7,
+    "intensityMax": 9,
+    "orderInGroup": 1,
+    "notes": null
+  }
+}
+
+settings {
+  encodeUrl: true
+  forwardAuthorizationHeader: false
+}

@@ -1,0 +1,20 @@
+meta {
+  name: Buscar Treino por ID
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/workouts/{{workoutId}}?coachId={{coachId}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  coachId: {{coachId}}
+}
+
+settings {
+  encodeUrl: true
+  forwardAuthorizationHeader: false
+}

@@ -1,0 +1,20 @@
+meta {
+  name: Remover Atividade
+  type: http
+  seq: 10
+}
+
+delete {
+  url: {{baseUrl}}/workouts/{{workoutId}}/activities/{{activityId}}?coachId={{coachId}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  coachId: {{coachId}}
+}
+
+settings {
+  encodeUrl: true
+  forwardAuthorizationHeader: false
+}

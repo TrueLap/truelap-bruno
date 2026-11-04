@@ -1,0 +1,30 @@
+meta {
+  name: Alterar Status do Atleta
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{baseUrl}}/athletes/{{athleteId}}/status?coachId={{coachId}}
+  body: json
+  auth: inherit
+}
+
+params:query {
+  coachId: {{coachId}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "status": "ACTIVE"
+  }
+}
+
+settings {
+  encodeUrl: true
+  forwardAuthorizationHeader: false
+}

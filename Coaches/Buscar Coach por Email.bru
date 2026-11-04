@@ -1,0 +1,20 @@
+meta {
+  name: Buscar Coach por Email
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/coaches?email=joao@test.com
+  body: none
+  auth: inherit
+}
+
+params:query {
+  email: joao@test.com
+}
+
+settings {
+  encodeUrl: true
+  forwardAuthorizationHeader: false
+}

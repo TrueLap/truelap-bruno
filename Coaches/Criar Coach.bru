@@ -1,0 +1,29 @@
+meta {
+  name: Criar Coach
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/coaches
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "João Silva",
+    "email": "joao@test.com",
+    "phone": "+5511999999999",
+    "password": "senha123"
+  }
+}
+
+settings {
+  encodeUrl: true
+  forwardAuthorizationHeader: false
+}

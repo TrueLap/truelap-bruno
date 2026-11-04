@@ -1,0 +1,30 @@
+meta {
+  name: Reordenar Itens
+  type: http
+  seq: 9
+}
+
+put {
+  url: {{baseUrl}}/workouts/{{workoutId}}/items/order?coachId={{coachId}}
+  body: json
+  auth: inherit
+}
+
+params:query {
+  coachId: {{coachId}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "itemIds": [1, 2, 3]
+  }
+}
+
+settings {
+  encodeUrl: true
+  forwardAuthorizationHeader: false
+}

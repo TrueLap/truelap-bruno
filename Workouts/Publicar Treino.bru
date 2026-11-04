@@ -1,0 +1,20 @@
+meta {
+  name: Publicar Treino
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{baseUrl}}/workouts/{{workoutId}}/publish?coachId={{coachId}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  coachId: {{coachId}}
+}
+
+settings {
+  encodeUrl: true
+  forwardAuthorizationHeader: false
+}

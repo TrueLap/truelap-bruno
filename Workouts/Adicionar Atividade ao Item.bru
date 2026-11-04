@@ -1,0 +1,36 @@
+meta {
+  name: Adicionar Atividade ao Item
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/workouts/{{workoutId}}/items/{{itemId}}/activity?coachId={{coachId}}
+  body: json
+  auth: inherit
+}
+
+params:query {
+  coachId: {{coachId}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "Corrida leve",
+    "targetUnit": "DISTANCE",
+    "targetValue": 5.0,
+    "intensityMetric": "PACE",
+    "intensityMin": 4.5,
+    "intensityMax": 5.5,
+    "notes": null
+  }
+}
+
+settings {
+  encodeUrl: true
+  forwardAuthorizationHeader: false
+}

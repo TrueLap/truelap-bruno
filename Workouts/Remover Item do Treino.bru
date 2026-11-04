@@ -1,0 +1,20 @@
+meta {
+  name: Remover Item do Treino
+  type: http
+  seq: 8
+}
+
+delete {
+  url: {{baseUrl}}/workouts/{{workoutId}}/items/{{itemId}}?coachId={{coachId}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  coachId: {{coachId}}
+}
+
+settings {
+  encodeUrl: true
+  forwardAuthorizationHeader: false
+}

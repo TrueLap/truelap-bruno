@@ -1,0 +1,30 @@
+meta {
+  name: Adicionar Item (ACTIVITY)
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/workouts/{{workoutId}}/items?coachId={{coachId}}
+  body: json
+  auth: inherit
+}
+
+params:query {
+  coachId: {{coachId}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "type": "ACTIVITY"
+  }
+}
+
+settings {
+  encodeUrl: true
+  forwardAuthorizationHeader: false
+}
